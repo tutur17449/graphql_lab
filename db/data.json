@@ -1,37 +1,37 @@
 {
   "post": [
     {
-      "id": 1,
+      "id": "dnAFVJpauQrmASNsxuPbcH",
       "title": "Post 1",
       "content": "Lorem ipsum ....",
-      "author": 1
+      "author": "srzsawudn3TQXKTyJqft74"
     },
     {
-      "id": 2,
+      "id": "1B8axRqhzNno5RiqeuAAKs",
       "title": "Post 2",
       "content": "Lorem ipsum ....",
-      "author": 2
+      "author": "95GVonuZTb2GTQj8YTA5x6"
     },
     {
-      "id": 3,
+      "id": "q99uVLaM7PdFMDYJiXr2cj",
       "title": "Post 3",
       "content": "Lorem ipsum ....",
-      "author": 3
+      "author": "6EF5TLCkFyf1uVqjw92tU7"
     }
   ],
   "user": [
     {
-      "id": 1,
+      "id": "srzsawudn3TQXKTyJqft74",
       "name": "User1",
       "age": 25
     },
     {
-      "id": 2,
+      "id": "95GVonuZTb2GTQj8YTA5x6",
       "name": "User2",
       "age": 18
     },
     {
-      "id": "3",
+      "id": "6EF5TLCkFyf1uVqjw92tU7",
       "name": "User3",
       "age": 51
     }

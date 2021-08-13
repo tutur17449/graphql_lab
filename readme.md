@@ -1,8 +1,8 @@
-
 **Get Post**
+
 ```
 query {
-  getPost(id: 2) {
+  getPost(id: "dnAFVJpauQrmASNsxuPbcH") {
     id
     title
     content

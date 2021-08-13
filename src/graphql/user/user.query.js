@@ -1,4 +1,4 @@
-const { GraphQLInt, GraphQLList } = require("graphql");
+const { GraphQLList, GraphQLID } = require("graphql");
 const { getUserById, getUsers } = require("./user.actions");
 const UserType = require("./user.type");
 
@@ -14,7 +14,7 @@ const userQuery = {
     type: UserType,
     description: "Retrieve single user",
     args: {
-      id: { type: GraphQLInt },
+      id: { type: GraphQLID },
     },
     resolve: async (_, { id }) => {
       return await getUserById(id);

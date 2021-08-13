@@ -16,7 +16,21 @@ const getUserById = async (id) => {
   return data;
 };
 
+const createUser = async (newData) => {
+  const response = await fetch("http://localhost:4200/user", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newData),
+  });
+
+  const data = await response.json();
+  return data;
+};
+
 module.exports = {
   getUserById,
   getUsers,
+  createUser,
 };

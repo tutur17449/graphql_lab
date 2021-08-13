@@ -14,7 +14,21 @@ const getPostById = async (id) => {
   return data;
 };
 
+const createPost = async (newData) => {
+  const response = await fetch("http://localhost:4200/post", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newData),
+  });
+
+  const data = await response.json();
+  return data;
+};
+
 module.exports = {
   getPostById,
   getPosts,
+  createPost,
 };

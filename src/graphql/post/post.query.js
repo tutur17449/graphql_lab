@@ -1,4 +1,4 @@
-const { GraphQLInt, GraphQLList } = require("graphql");
+const { GraphQLList, GraphQLID } = require("graphql");
 const PostType = require("./post.type");
 const { getPostById, getPosts } = require("./post.actions");
 
@@ -14,7 +14,7 @@ const postQuery = {
     type: PostType,
     description: "Retrieve single post",
     args: {
-      id: { type: GraphQLInt },
+      id: { type: GraphQLID },
     },
     resolve: async (_, { id }) => {
       return await getPostById(id);
