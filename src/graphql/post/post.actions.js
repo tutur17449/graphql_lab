@@ -27,8 +27,32 @@ const createPost = async (newData) => {
   return data;
 };
 
+const updatePost = async (id, newData) => {
+  const response = await fetch(`http://localhost:4200/post/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newData),
+  });
+
+  const data = await response.json();
+  return data;
+};
+
+const deletePost = async (id) => {
+  const response = await fetch(`http://localhost:4200/post/${id}`, {
+    method: "DELETE",
+  });
+
+  const data = await response.json();
+  return data;
+};
+
 module.exports = {
   getPostById,
   getPosts,
   createPost,
+  updatePost,
+  deletePost,
 };

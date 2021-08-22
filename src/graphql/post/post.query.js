@@ -1,5 +1,5 @@
 const { GraphQLList, GraphQLID } = require("graphql");
-const PostType = require("./post.type");
+const { PostType } = require("./post.type");
 const { getPostById, getPosts } = require("./post.actions");
 
 const postQuery = {

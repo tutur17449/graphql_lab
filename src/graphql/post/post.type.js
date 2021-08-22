@@ -1,4 +1,9 @@
-const { GraphQLObjectType, GraphQLString, GraphQLID } = require("graphql");
+const {
+  GraphQLObjectType,
+  GraphQLString,
+  GraphQLID,
+  GraphQLInputObjectType,
+} = require("graphql");
 const UserType = require("../user/user.type");
 const { getUserById } = require("../user/user.actions");
 
@@ -18,4 +23,16 @@ const PostType = new GraphQLObjectType({
   }),
 });
 
-module.exports = PostType;
+const PostInputType = new GraphQLInputObjectType({
+  name: "PostInput",
+  fields: {
+    title: { type: GraphQLString },
+    content: { type: GraphQLString },
+    author: { type: GraphQLID },
+  },
+});
+
+module.exports = {
+  PostType,
+  PostInputType,
+};
