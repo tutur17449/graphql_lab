@@ -5,7 +5,6 @@ const {
   GraphQLInputObjectType,
 } = require("graphql");
 const UserType = require("../user/user.type");
-const { getUserById } = require("../user/user.actions");
 
 const PostType = new GraphQLObjectType({
   name: "Post",
@@ -16,8 +15,8 @@ const PostType = new GraphQLObjectType({
     content: { type: GraphQLString },
     author: {
       type: UserType,
-      resolve: async (parent) => {
-        return await getUserById(parent.author);
+      resolve: async (parent, { }, { loaders }) => {
+        return await loaders.userLoader.load(parent.author)
       },
     },
   }),

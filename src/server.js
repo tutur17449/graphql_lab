@@ -4,6 +4,7 @@ const { graphqlHTTP } = require("express-graphql");
 const port = 4201;
 const server = express();
 const schema = require("./graphql/schema");
+const { userLoader } = require("./graphql/loader/user.loader");
 
 const corsOptions = {
   origin: "*",
@@ -18,6 +19,9 @@ server.use(
   graphqlHTTP({
     schema: schema,
     graphiql: true,
+    context: {
+      loaders: { userLoader }
+    }
   })
 );
 
