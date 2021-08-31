@@ -15,8 +15,8 @@ const postMutation = {
     args: {
       postData: { type: PostInputType },
     },
-    resolve: async (_, data) => {
-      return await createPost({ id: short.generate(), ...data });
+    resolve: async (_, {postData}) => {
+      return await createPost({ id: short.generate(), ...postData });
     },
   },
   updatePost: {
